@@ -109,10 +109,10 @@ function SystemStatus() {
         scales: {
             y: {
                 ticks: {
-                    beginAtZero: true,
                     min: 0,
+                    stepSize: 1,
                     callback: function(value) {
-                        return `${value} B`;
+                        return value % 1 === 0 ? `${value} B` : '';
                     }
                 },
                 title: {

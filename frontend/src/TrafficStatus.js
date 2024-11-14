@@ -35,9 +35,11 @@ function TrafficStatus() {
         scales: {
             y: {
                 ticks: {
-                    beginAtZero: true,
                     min: 0,
                     stepSize: 1,
+                    callback: function(value) {
+                        return value % 1 === 0 ? value : '';
+                    }
                 },
                 title: {
                     display: true,
